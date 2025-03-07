@@ -3,22 +3,290 @@
 @theme {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-sans-bold: var(--font-geist-sans-bold);
+  --font-inter: var(--font-geist-inter);
+  --font-inconsolata: var(--font-geist-inconsolata);
+  --font-geist-sans: "Inter", sans-serif;
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-sans: "Poppins", sans-serif;
+  --font-sans-bold: "Poppins ExtraBold", sans-serif;
+  --font-mono: "Inconsolata", monospace;
+  --font-inter: "Inter", sans-serif;
+  --font-inconsolata: "Inconsolata", monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"), url("/fonts/Poppins.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
+@font-face {
+  font-family: "Poppins ExtraBold";
+  src: local("Poppins ExtraBold"),
+    url("/fonts/Poppins-Extrabold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inconsolata";
+  src: local("Inconsolata"), url("/fonts/inconsolata.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: local("Inter"), url("/fonts/Inter.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Apply Styles */
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+.font-normal {
+  font-weight: normal;
+}
+
+.text-shadow {
+  text-shadow: 0 5px 4px rgba(0, 0, 0, 0.5);
+}
+.inner-text-shadow {
+  font-weight: bold;
+  background: linear-gradient(to bottom, #60df92, #2e7d48);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.custom-rounded {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 20px;
+  transition: transform 0.2s ease-in-out;
+  width: 357px;
+  height: 79px;
+  transform-origin: left; /* Ensures scaling happens to the right */
+}
+
+.custom-rounded:hover {
+  transform: scaleX(1.05); /* Expands to the right */
+}
+
+.custom-rounded:active {
+  transform: scale(0.96); /* Keeps right scale while slightly pressing down */
+}
+
+/*  Download Button Styles */
+.download-link {
+  cursor: pointer;
+  background: #6d895c;
+  border-radius: 5px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding-bottom: 5px;
+  padding-right: 3px;
+  display: inline-block;
+  color: #6d895c;
+  transition: transform 0.2s ease-in-out;
+}
+
+.download-link:hover {
+  transform: scale(1.1);
+}
+
+.download-link:active {
+  transform: scale(0.95);
+}
+
+/* about Button Styles */
+.download-button {
+  cursor: pointer;
+  background: #6d895c;
+  border: 1px solid white;
+  color: white;
+  border-radius: 5px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding: 10px 30px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+/* Global Social Media Link Styles */
+.social-link {
+  display: inline-block;
+  color: #6d895c;
+  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.social-link:hover {
+  transform: scale(1.1);
+  color: #60df92;
+}
+
+.social-link:active {
+  transform: scale(0.95);
+}
+
+/* navigation hover effect */
+.hover-text-green {
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.hover-text-green:hover {
+  color: #60df92;
+}
+
+/* navigation border below */
+.hover-border-green {
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+.hover-border-green:hover {
+  border-bottom-color: #60df92;
+}
+/* Typing effect */
+.typing-text {
+  border-right: 3px solid white; /* Cursor effect */
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+}
+
+/* Blinking cursor effect */
+.cursor {
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* animated background */
+@keyframes bgMove {
+  0% {
+    transform: translateX(-30px) translateY(-30px) scale(1);
+  }
+  50% {
+    transform: translateX(30px) translateY(30px) scale(1.1);
+  }
+  100% {
+    transform: translateX(-30px) translateY(-30px) scale(1);
+  }
+}
+
+.animate-bgBlur {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(96, 223, 146, 0.6) 10%,
+    /* Stronger #60DF92 */ rgba(109, 137, 92, 0.5) 50%,
+    /* Stronger #6D895C */ rgba(226, 232, 213, 0.3) 100% /* Lighter #E2E8D5 */
+  );
+  filter: blur(80px);
+  opacity: 0.8; /* Make it more visible */
+  animation: bgMove 5s infinite alternate ease-in-out;
+}
+@keyframes bgMove {
+  0% {
+    transform: translateX(-30px) translateY(-30px) scale(1);
+  }
+  50% {
+    transform: translateX(30px) translateY(30px) scale(1.1);
+  }
+  100% {
+    transform: translateX(-30px) translateY(-30px) scale(1);
+  }
+}
+
+.animate-bgBlur {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(96, 223, 146, 0.6) 10%,
+    /* Stronger #60DF92 */ rgba(109, 137, 92, 0.5) 50%,
+    /* Stronger #6D895C */ rgba(226, 232, 213, 0.3) 100% /* Lighter #E2E8D5 */
+  );
+  filter: blur(80px);
+  opacity: 0.8; /* Make it more visible */
+  animation: bgMove 5s infinite alternate ease-in-out;
+}
+@keyframes bgMove {
+  0% {
+    transform: translateX(-30px) translateY(-30px) scale(1);
+  }
+  50% {
+    transform: translateX(30px) translateY(30px) scale(1.1);
+  }
+  100% {
+    transform: translateX(-30px) translateY(-30px) scale(1);
+  }
+}
+
+.animate-bgBlur {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(96, 223, 146, 0.6) 10%,
+    /* Stronger #60DF92 */ rgba(109, 137, 92, 0.5) 50%,
+    /* Stronger #6D895C */ rgba(226, 232, 213, 0.3) 100% /* Lighter #E2E8D5 */
+  );
+  filter: blur(80px);
+  opacity: 0.8; /* Make it more visible */
+  animation: bgMove 5s infinite alternate ease-in-out;
+}
+@keyframes bgMove {
+  0% {
+    transform: translateX(-30px) translateY(-30px) scale(1);
+  }
+  50% {
+    transform: translateX(30px) translateY(30px) scale(1.1);
+  }
+  100% {
+    transform: translateX(-30px) translateY(-30px) scale(1);
+  }
+}
+
+.animate-bgBlur {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(96, 223, 146, 0.6) 10%,
+    /* Stronger #60DF92 */ rgba(109, 137, 92, 0.5) 50%,
+    /* Stronger #6D895C */ rgba(226, 232, 213, 0.3) 100% /* Lighter #E2E8D5 */
+  );
+  filter: blur(80px);
+  opacity: 0.8; /* Make it more visible */
+  animation: bgMove 5s infinite alternate ease-in-out;
+}
+
+/* image borders home */
+
+.border_image {
+  border-radius: 10px 100px 10px 50px;
 }

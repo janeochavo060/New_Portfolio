@@ -1,0 +1,37 @@
+{
+  "name": "Jane Rose Dinoy Ochavo",
+  "title": "I’m a Frontend Developer",
+  "description": "I create efficient, high-quality solutions with a detail-oriented and proactive mindset. Beyond clean code, I focus on real-world impact, collaboration, and getting things done right. Thoughtful, adaptable, and driven—I ensure every project is executed with excellence.",
+  "personalInformation": {
+    "description": "A detail-oriented professional passionate about problem-solving and efficiency.",
+    "gender": "Female",
+    "age": 22,
+    "languages": [
+      "English",
+      "Tagalog"
+    ],
+    "city": "Cebu, Philippines",
+    "nationality": "Filipino",
+    "phone": "0912-650-1665",
+    "email": "janeochavo060@gmail.com",
+    "status": "Taken"
+  },
+  "educationtab": {
+    "title": "Education",
+    "description": "Bachelor of Science and Technology graduate with a strong foundation in programming.",
+    "schools": [
+      {
+        "school_year": "2022-2025",
+        "school": "Cordova Public College",
+        "year_span": "4yr. Tertiary Education",
+        "description": "Pursuing a Bachelor’s Degree with a focus on programming. Gaining in-depth knowledge and practical experience."
+      },
+      {
+        "school_year": "2018-2022",
+        "school": "Benthel Asia School of Technology",
+        "year_span": "2yr. Secondary Education",
+        "description": "Building a strong foundation in academic and technical skills."
+      }
+    ]
+  }
+}
