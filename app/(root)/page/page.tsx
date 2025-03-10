@@ -5,6 +5,7 @@ import Image from "next/image";
 import { GithubIcon, Insta, LinkedinIcon } from "@/public/icons/icons";
 import AboutDetails from "@/components/aboutDetails";
 import ContactForm from "@/components/ContactForm";
+import My_portfolio from "@/components/my_portfolio";
 
 const titles = ["UI Designer", "Frontend Developer"];
 
@@ -76,7 +77,7 @@ const Page = () => {
         <div className="lg:grid lg:grid-cols-2 flex flex-col-reverse items-center lg:h-screen justify-center">
           <div>
             <div className="text-center lg:text-start space-y-5 pt-10">
-              <h1 className=" text-[24px] md:text-[30px] lg:text-[36px] 2xl:text-[50px] text-shadow ">
+              <h1 className=" text-[24px] md:text-[30px] lg:text-[36px]  text-shadow ">
                 {data.name}
               </h1>
 
@@ -92,25 +93,25 @@ const Page = () => {
                 </span>
               </div>
 
-              <div className="max-w-[600px] text-[16px] md:text-[18px] lg:text-[20px] text-justify">
+              <div className="max-w-[600px] text-[12px] md:text-[18px] lg:text-[20px] text-justify">
                 <p>{data.description}</p>
               </div>
             </div>
 
-            <div className="flex items-center justify-center lg:justify-start mt-[30px]">
+            <div className="flex flex-col items-center justify-center lg:justify-start md:flex-row mt-[30px]">
               <a
                 href="/resume.pdf"
                 download="Jane_resume.pdf"
-                className="download-link"
+                className="download-link "
               >
-                <button className="download-button">
-                  <h6 className="text-[16px] md:text-[18px] lg:text-[20px]">
+                <button className="download-button  ">
+                  <h6 className="text-[14px] md:text-[18px] lg:text-[20px] p-3">
                     DOWNLOAD CV
                   </h6>
                 </button>
               </a>
 
-              <div className="flex ml-[57px] space-x-[19px] cursor-pointer">
+              <div className="flex md:ml-[57px] space-x-[19px] mt-[20px] md:mt-0 cursor-pointer">
                 <a
                   href="https://www.instagram.com/janeochavo/"
                   target="_blank"
@@ -154,6 +155,10 @@ const Page = () => {
       {/* Sections with corresponding IDs */}
       <div id="about">
         <AboutDetails />
+      </div>
+
+      <div id="portfolio">
+        <My_portfolio />
       </div>
 
       <div id="contact">

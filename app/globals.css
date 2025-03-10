@@ -120,7 +120,6 @@ body {
   border-radius: 5px;
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
-  padding: 10px 30px;
   font-size: 18px;
   font-weight: 800;
 }
@@ -289,4 +288,28 @@ body {
 
 .border_image {
   border-radius: 10px 100px 10px 50px;
+}
+.responsive-text {
+  font-size: 10px; /* Default for small screens */
+}
+
+@media (min-width: 768px) {
+  /* md (Medium) */
+  .responsive-text {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* lg (Large) */
+  .responsive-text {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1536px) {
+  /* 2xl (Extra Large) */
+  .responsive-text {
+    font-size: 16px;
+  }
 }

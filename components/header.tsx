@@ -29,10 +29,12 @@ const Header = () => {
         <div>
           <Image
             src="/images/logojane.png"
-            width={51}
-            height={80}
+            width={41}
+            height={50}
             alt="logo"
-            className="w-full h-auto aspect-[51/80]"
+            className="w-full h-full aspect-[41/50]"
+
+            w-full h-full 
           />
         </div>
 
