@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { GithubIcon, Insta, LinkedinIcon } from "@/public/icons/icons";
-import AboutDetails from "@/components/aboutDetails";
+import About from "@/components/about";
 import ContactForm from "@/components/ContactForm";
 import My_portfolio from "@/components/my_portfolio";
 
@@ -154,7 +154,7 @@ const Page = () => {
 
       {/* Sections with corresponding IDs */}
       <div id="about">
-        <AboutDetails />
+        <About />
       </div>
 
       <div id="portfolio">

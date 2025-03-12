@@ -31,6 +31,48 @@
         "school": "Benthel Asia School of Technology",
         "year_span": "2yr. Secondary Education",
         "description": "Building a strong foundation in academic and technical skills."
+      },
+      {
+        "school_year": "2015-2018",
+        "school": "Sudtonggan Night High School",
+        "year_span": "4yr. Secondary Education",
+        "description": "Developing critical thinking, problem-solving, and collaborative skills."
+      },
+      {
+        "school_year": "2009-2015",
+        "school": "Ibabao Elementary School",
+        "year_span": "6yr. Primary Education",
+        "description": "Establishing essential learning skills and academic fundamentals."
+      }
+    ]
+  },
+  "skills": {
+    "title": "Skills",
+    "description": "Master the essentials of web development with Next.js, Vue.js, React, Tailwind CSS, PHP, and MySQL, building dynamic, responsive, and scalable web applications.",
+    "hover_text": [
+      {
+        "title": "Next.js",
+        "description": " A React framework for building fast, server-rendered and static web applications with ease."
+      },
+      {
+        "title": "Vue.js",
+        "description": "A progressive JavaScript framework for building interactive and flexible frontend applications."
+      },
+      {
+        "title": "React",
+        "description": "A JavaScript library for creating reusable UI components and dynamic user interfaces."
+      },
+      {
+        "title": "Tailwind CSS",
+        "description": "A utility-first CSS framework for quickly styling modern and responsive web designs."
+      },
+      {
+        "title": "PHP",
+        "description": "A server-side scripting language used for building dynamic websites and backend functionality."
+      },
+      {
+        "title": "Figma",
+        "description": "A cloud-based design tool for creating UI/UX prototypes, wireframes, and collaborative design projects."
       }
     ]
   }

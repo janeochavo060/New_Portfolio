@@ -55,6 +55,7 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-sans);
+  overflow-x: hidden;
 }
 .font-normal {
   font-weight: normal;
@@ -76,8 +77,6 @@ body {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 20px;
   transition: transform 0.2s ease-in-out;
-  width: 357px;
-  height: 79px;
   transform-origin: left; /* Ensures scaling happens to the right */
 }
 

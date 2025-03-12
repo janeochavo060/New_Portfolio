@@ -6,8 +6,10 @@ import Image from "next/image";
 const ContactForm = () => {
   return (
     <div className=" 2xl:px-[242px] xl:px-[70px] px-[30px] py-[40px] h-screen">
-      <div className="flex items-center justify-center text-[24px] md:text-[30px] lg:text-[36px] 2xl:text-[50px]  mt-[48px] mb-[32px] text-[#60DF92] inner-text-shadow ">
-        <h1>CONTACT</h1>
+      <div className="flex items-center justify-center  mt-[48px] mb-[32px] text-[#60DF92] inner-text-shadow ">
+        <h1 className="text-[24px] md:text-[30px] lg:text-[36px] 2xl:text-[50px] ">
+          CONTACT
+        </h1>
       </div>
       <div className="grid lg:grid-cols-2 w-full">
         <div className=" h-[489px] md:h-[459px] lg:h-[599px] rounded-[20px] bg-[#E2E8D5]  p-[30px] lg:p-[40px] 2xl:p-[60px] max-w-[900px] ">

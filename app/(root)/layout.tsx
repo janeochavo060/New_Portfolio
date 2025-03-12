@@ -8,7 +8,7 @@ const Layout = ({
 }>) => {
   return (
     <html lang="en">
-      <body>
+      <body style={{ overflowX: "hidden" }}>
         <div>
           <Header />
           <main>{children}</main>
