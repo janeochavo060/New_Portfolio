@@ -25,7 +25,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="bg-[#E2E8D5] 2xl:px-[242px] xl:px-[70px]  py-[10px]  w-full  uppercase sticky top-0 z-50 ">
+      <div className="bg-[#E2E8D5] 2xl:px-[242px] xl:px-[70px]  py-[10px]  w-full  uppercase sticky top-0 z-50  shadow-md ">
         <div className="px-[30px] flex items-center justify-center">
           <div>
             <Image
@@ -76,7 +76,7 @@ const Header = () => {
         {/* Mobile Menu (Dropdown) */}
         <div
           className={`lg:hidden bg-gray-400 flex items-center flex-col justify-center 
-              fixed top-[110px] left-0 w-full h-full z-50 
+               fixed top-[79px] left-0 w-full h-full  z-50 
               transition-all duration-300 ease-in-out transform 
               ${
                 isMenuOpen

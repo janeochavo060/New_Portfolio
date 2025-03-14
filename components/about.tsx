@@ -8,7 +8,7 @@ const About = () => {
   const [activeSection, setActiveSection] = useState("Personal Information");
 
   return (
-    <div className="flex items-center 2xl:justify-between flex-col xl:flex-row 2xl:px-[242px] xl:px-[70px] px-[30px] py-[40px] h-full">
+    <div className="flex items-center 2xl:justify-between flex-col xl:flex-row 2xl:px-[242px] xl:px-[70px] px-[30px] py-[40px] h-screen">
       <div>
         <Aboutme_buttons setActiveSection={setActiveSection} />
       </div>

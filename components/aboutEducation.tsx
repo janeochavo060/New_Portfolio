@@ -50,7 +50,7 @@ const AboutEducation = () => {
             <h3 className="text-[15px] md:text-[17px] lg:text-[19px] ">
               {school.school_year}
             </h3>
-            <p className="text-[19px] md:text-[21px] lg:text-[23px] font-semibold">
+            <p className="text-[17px] md:text-[21px] lg:text-[23px] font-semibold">
               {school.school}
             </p>
             <div className="flex items-center space-x-2">
