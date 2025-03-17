@@ -62,7 +62,7 @@ const AboutSkills = () => {
             </div>
             <div className="absolute inset-x-0 bottom-0 h-1/2 flex flex-col justify-center items-center bg-[#9F9F9F] bg-opacity-68 p-4 rounded-b-[17px] shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <h3 className="text-[13px] font-semibold">{skill.title}</h3>
-              <span className="text-[12px]  ">{skill.description}</span>
+              <span className="text-[10px]  ">{skill.description}</span>
             </div>
           </div>
         ))}

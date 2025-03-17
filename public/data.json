@@ -75,5 +75,33 @@
         "description": "A cloud-based design tool for creating UI/UX prototypes, wireframes, and collaborative design projects."
       }
     ]
+  },
+  "portfolio": {
+    "data": [
+      {
+        "num": "01",
+        "title": "Warmows",
+        "description": "The RR Water Refilling Sales Monitoring Web System (WARSMOWS) is an online tool that streamlines sales tracking, inventory management, expenses, POS, user accounts, deliveries, and customer data handling. With reporting, analytics, robust security, and mobile compatibility, it empowers water refilling businesses to operate efficiently and make informed decisions.",
+        "tech_used": "VUE, TAILWIND, NODE.JS, EXPRESS ",
+        "image": "/images/warsmows.png",
+        "github": "https://github.com/janeochavo060/warsmows"
+      },
+      {
+        "num": "02",
+        "title": "Travelog",
+        "description": "Travelog is a travel blog website that shares inspiring destinations, travel tips, and personal experiences to help adventurers explore the world. With engaging stories, stunning visuals, and practical guides, it makes travel planning easier and more exciting.",
+        "tech_used": " HTML, CSS, JAVASCRIPT",
+        "image": "/images/travelguide.png",
+        "github": "https://github.com/janeochavo060/TravelGuide"
+      },
+      {
+        "num": "03",
+        "title": "Agile Webworks",
+        "description": "is a dynamic web development company specializing in creating fast, scalable, and user-friendly websites using modern technologies. With an agile approach, it delivers innovative digital solutions tailored to businesses' unique needs.",
+        "tech_used": " REACT, NEXTJS, TAILWIND CSS",
+        "image": "/images/agile.png",
+        "github": "https://github.com/janeochavo060/AGILEWEBWORKS"
+      }
+    ]
   }
 }
