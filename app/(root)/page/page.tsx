@@ -21,12 +21,18 @@ const Page = () => {
 
   const searchParams = useSearchParams();
 
+  // Fetch Data.json
   useEffect(() => {
     fetch("/data.json")
-      .then((response) => response.json())
-      .then((data) => setData(data));
+      .then((response) => {
+        if (!response.ok) throw new Error("Failed to load data");
+        return response.json();
+      })
+      .then((data) => setData(data))
+      .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
+  // Typing Effect
   useEffect(() => {
     const currentWord = titles[wordIndex];
 
@@ -35,14 +41,14 @@ const Page = () => {
         setTypedText(currentWord.substring(0, charIndex + 1));
         setCharIndex((prev) => prev + 1);
 
-        if (charIndex === currentWord.length) {
+        if (charIndex + 1 === currentWord.length) {
           setTimeout(() => setIsDeleting(true), pauseTime);
         }
       } else {
         setTypedText(currentWord.substring(0, charIndex - 1));
         setCharIndex((prev) => prev - 1);
 
-        if (charIndex === 0) {
+        if (charIndex - 1 === 0) {
           setIsDeleting(false);
           setWordIndex((prev) => (prev + 1) % titles.length);
         }
@@ -57,14 +63,16 @@ const Page = () => {
     return () => clearTimeout(timeout);
   }, [charIndex, isDeleting, wordIndex]);
 
-  // Scroll to section based on URL query param (?name=about, ?name=contact, etc.)
+  // Scroll to Section Based on URL Parameter
   useEffect(() => {
     const sectionName = searchParams.get("name");
     if (sectionName) {
-      const section = document.getElementById(sectionName);
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth" });
-      }
+      setTimeout(() => {
+        const section = document.getElementById(sectionName);
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 200);
     }
   }, [searchParams]);
 
@@ -102,9 +110,9 @@ const Page = () => {
               <a
                 href="/resume.pdf"
                 download="Jane_resume.pdf"
-                className="download-link "
+                className="download-link"
               >
-                <button className="download-button  ">
+                <button className="download-button">
                   <h6 className="text-[14px] md:text-[18px] lg:text-[20px] p-3">
                     DOWNLOAD CV
                   </h6>

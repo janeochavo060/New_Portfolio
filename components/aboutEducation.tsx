@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Aboutme_buttons from "@/components/aboutme_buttons";
 
 const AboutEducation = () => {
   interface School {
@@ -31,7 +30,7 @@ const AboutEducation = () => {
   }
 
   return (
-    <div className="lg:pl-[30px] xl:pl-[70px] pt-[70px] h-screen  xl:flex flex-col xl:items-center xl:justify-center">
+    <div className="lg:pl-[30px] xl:pl-[70px] pt-[70px] h-full  xl:flex flex-col xl:items-center xl:justify-center">
       <div className="text-center xl:text-start ">
         <h2 className="text-[20px] md:text-[25px] lg:text-[30px]">
           {data.educationtab?.title}

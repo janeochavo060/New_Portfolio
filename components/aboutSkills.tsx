@@ -36,7 +36,7 @@ const AboutSkills = () => {
   }
 
   return (
-    <div className="lg:pl-[30px] xl:pl-[70px] pt-[70px] h-screen  xl:flex flex-col xl:items-center xl:justify-center">
+    <div className="lg:pl-[30px] xl:pl-[70px] pt-[70px] h-auto xl:flex flex-col xl:items-center xl:justify-center">
       <div className="text-center lg:text-start">
         <h2 className="text-[20px] md:text-[25px] lg:text-[30px]">
           {data.skills?.title}
