@@ -9,6 +9,7 @@ const ContactForm = () => {
   const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     setTimeout(() => {
       if (formRef.current) {
         formRef.current.reset();

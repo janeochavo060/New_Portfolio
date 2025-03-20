@@ -13,6 +13,7 @@ const My_portfolio = () => {
     image?: string;
     github?: string;
   }
+
   interface Data {
     portfolio?: {
       data?: Content[];
@@ -24,22 +25,25 @@ const My_portfolio = () => {
   useEffect(() => {
     fetch("/data.json")
       .then((response) => response.json())
-      .then((data) => setData(data))
+      .then((jsonData) => {
+        setData(jsonData); // ✅ Update state properly
+      })
       .catch((error) => console.error("Error fetching data:", error));
-  }, []);
+  }, []); // ✅ Fetch only once when the component mounts
 
-  if (!data || !data.portfolio?.data) {
+  if (!data || !data.portfolio?.data || data.portfolio.data.length === 0) {
     return <div className="text-center text-gray-500">Loading...</div>;
   }
 
   return (
-    <div className="2xl:px-[242px] xl:px-[70px] px-[30px] py-[40px] h-full ">
-      <div className="flex items-center justify-center  mt-[48px] mb-[32px] text-[#60DF92] inner-text-shadow ">
-        <h1 className="text-[24px] md:text-[30px] lg:text-[36px] 2xl:text-[50px] ">
+    <div className="2xl:px-[242px] xl:px-[70px] px-[30px] py-[40px] h-full">
+      <div className="flex items-center justify-center mt-[48px] mb-[32px] text-[#60DF92] inner-text-shadow">
+        <h1 className="text-[24px] md:text-[30px] lg:text-[36px] 2xl:text-[50px]">
           MY PORTFOLIO
         </h1>
       </div>
-      <div className=" max-w-[1100px]  mx-auto space-y-24 ">
+
+      <div className="max-w-[1100px] mx-auto space-y-24">
         {data.portfolio.data.map((content, index) => (
           <motion.div
             key={index}
@@ -49,13 +53,13 @@ const My_portfolio = () => {
             transition={{ duration: 0.5, delay: 0.25 }}
             className={`flex ${
               index % 2 === 1
-                ? "flex-col md:flex-row-reverse bg-white shadow-2xl p-8 rounded-xl "
+                ? "flex-col md:flex-row-reverse bg-white shadow-2xl p-8 rounded-xl"
                 : "flex-col md:flex-row bg-white shadow-2xl p-8 rounded-xl"
             }`}
           >
-            <div className="space-y-2 max-w-[650px] ">
+            <div className="space-y-2 max-w-[650px]">
               <div className="flex flex-col justify-center">
-                <div className=" text-[56px]  lg:text-[96px] xl:text-[128px] font-bold">
+                <div className="text-[56px] lg:text-[96px] xl:text-[128px] font-bold">
                   {content.num}
                 </div>
 
@@ -90,11 +94,12 @@ const My_portfolio = () => {
 
             <div className="flex justify-center items-center">
               <Image
-                src={content.image || "/images/default.png"}
+                src={content.image || "/default-image.jpg"}
                 width={469}
                 height={531}
-                alt={content.title || "Portfolio Image"}
+                alt={content.title || "Default Title"}
                 className="rounded-lg object-cover md:min-w-[369px] lg:min-w-[469px]"
+                unoptimized
               />
             </div>
           </motion.div>

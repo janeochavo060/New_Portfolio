@@ -62,7 +62,7 @@ const Home = () => {
                   className="text-[24px] md:text-[30px] lg:text-[36px]  text-shadow"
                 >
                   <span className="flex items-center">
-                    <span className="mr-2">I'm a</span>
+                    <span className="mr-2">I&apos;m a</span>
                     <TypeAnimation
                       sequence={["Frontend Dev", 1000, "UI Designer", 1000]}
                       wrapper="span"
