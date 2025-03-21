@@ -1,13 +1,15 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { GithubIcon, Insta, LinkedinIcon } from "@/public/icons/icons";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 
-const Home = () => {
+const HomeContent = () => {
   const [data, setData] = useState({ name: "", description: "" });
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const searchParams = useSearchParams();
 
   // Fetch Data.json
@@ -17,8 +19,15 @@ const Home = () => {
         if (!response.ok) throw new Error("Failed to load data");
         return response.json();
       })
-      .then((data) => setData(data))
-      .catch((error) => console.error("Error fetching data:", error));
+      .then((data) => {
+        setData(data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+        setError(error.message);
+        setIsLoading(false);
+      });
   }, []);
 
   // Scroll to Section Based on URL Parameter
@@ -34,6 +43,14 @@ const Home = () => {
     }
   }, [searchParams]);
 
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
   return (
     <>
       <div
@@ -48,7 +65,7 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false }}
                 transition={{ duration: 1 }}
-                className="text-[24px] md:text-[30px] lg:text-[36px]  text-shadow"
+                className="text-[24px] md:text-[30px] lg:text-[36px] text-shadow"
               >
                 {data.name}
               </motion.div>
@@ -59,7 +76,7 @@ const Home = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false }}
                   transition={{ duration: 2 }}
-                  className="text-[24px] md:text-[30px] lg:text-[36px]  text-shadow"
+                  className="text-[24px] md:text-[30px] lg:text-[36px] text-shadow"
                 >
                   <span className="flex items-center">
                     <span className="mr-2">I&apos;m a</span>
@@ -110,6 +127,7 @@ const Home = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-link"
+                  aria-label="Instagram"
                 >
                   <Insta />
                 </a>
@@ -118,6 +136,7 @@ const Home = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-link"
+                  aria-label="GitHub"
                 >
                   <GithubIcon />
                 </a>
@@ -126,6 +145,7 @@ const Home = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-link"
+                  aria-label="LinkedIn"
                 >
                   <LinkedinIcon />
                 </a>
@@ -134,16 +154,6 @@ const Home = () => {
           </div>
 
           <div className="relative flex items-center justify-center">
-            {/* <motion.div className="absolute z-50" drag>
-              <Image
-                src="/images/bee.png"
-                width={40}
-                height={40}
-                alt="profile_logo"
-                className=""
-                draggable="false"
-              />
-            </motion.div> */}
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -156,12 +166,21 @@ const Home = () => {
                 height={647}
                 alt="profile_logo"
                 className="relative z-10 h-[400px] lg:h-auto object-cover border_image"
+                priority
               />
             </motion.div>
           </div>
         </div>
       </div>
     </>
+  );
+};
+
+const Home = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <HomeContent />
+    </Suspense>
   );
 };
 

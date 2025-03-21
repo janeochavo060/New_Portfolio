@@ -1,12 +1,12 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { Suspense, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import About from "@/components/about";
 import ContactForm from "@/components/ContactForm";
 import My_portfolio from "@/components/my_portfolio";
 import Home from "@/components/home";
 
-const Page = () => {
+const PageContent = () => {
   const searchParams = useSearchParams();
 
   // Scroll to Section Based on URL Parameter
@@ -41,6 +41,14 @@ const Page = () => {
         <ContactForm />
       </div>
     </>
+  );
+};
+
+const Page = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <PageContent />
+    </Suspense>
   );
 };
 
