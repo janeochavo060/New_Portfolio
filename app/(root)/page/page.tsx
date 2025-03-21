@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import About from "@/components/about";
 import ContactForm from "@/components/ContactForm";
@@ -8,10 +8,15 @@ import My_portfolio from "@/components/my_portfolio";
 import Home from "@/components/home";
 
 const Page = () => {
+  const [sectionName, setSectionName] = useState<string | null>(null);
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    const sectionName = searchParams.get("name");
+    const name = searchParams.get("name");
+    setSectionName(name); // Store in state after hydration
+  }, [searchParams]);
+
+  useEffect(() => {
     if (sectionName) {
       setTimeout(() => {
         const section = document.getElementById(sectionName);
@@ -20,7 +25,7 @@ const Page = () => {
         }
       }, 200);
     }
-  }, [searchParams]);
+  }, [sectionName]);
 
   return (
     <>
