@@ -8,12 +8,12 @@ import My_portfolio from "@/components/my_portfolio";
 import Home from "@/components/home";
 
 const Page = () => {
-  const [sectionName, setSectionName] = useState<string | null>(null);
   const searchParams = useSearchParams();
+  const [sectionName, setSectionName] = useState<string | null>(null);
 
   useEffect(() => {
     const name = searchParams.get("name");
-    setSectionName(name); // Store in state after hydration
+    if (name) setSectionName(name); // Store in state to avoid hydration mismatch
   }, [searchParams]);
 
   useEffect(() => {
