@@ -1,48 +1,10 @@
-"use client";
+import { Suspense } from "react";
+import PageClient from "./PageClient"; // Import the Client Component
 
-import React, { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
-import About from "@/components/about";
-import ContactForm from "@/components/ContactForm";
-import My_portfolio from "@/components/my_portfolio";
-import Home from "@/components/home";
-
-const Page = () => {
-  const searchParams = useSearchParams();
-  const [sectionName, setSectionName] = useState<string | null>(null);
-
-  useEffect(() => {
-    const name = searchParams.get("name");
-    if (name) setSectionName(name); // Store in state to avoid hydration mismatch
-  }, [searchParams]);
-
-  useEffect(() => {
-    if (sectionName) {
-      setTimeout(() => {
-        const section = document.getElementById(sectionName);
-        if (section) {
-          section.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 200);
-    }
-  }, [sectionName]);
-
+export default function Page() {
   return (
-    <>
-      <div id="home">
-        <Home />
-      </div>
-      <div id="about">
-        <About />
-      </div>
-      <div id="portfolio">
-        <My_portfolio />
-      </div>
-      <div id="contact">
-        <ContactForm />
-      </div>
-    </>
+    <Suspense fallback={<div>Loading...</div>}>
+      <PageClient />
+    </Suspense>
   );
-};
-
-export default Page;
+}
