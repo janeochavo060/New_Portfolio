@@ -1,17 +1,7 @@
 import type { Metadata } from "next";
-// import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
-
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Jane's Portfolio",
@@ -33,7 +23,10 @@ export default function RootLayout({
       <body style={{ overflowX: "hidden" }}>
         <div>
           <Header />
-          <main>{children}</main>
+          {/* 🔥 Wrap children in Suspense to handle useSearchParams() */}
+          <Suspense fallback={<div>Loading...</div>}>
+            <main>{children}</main>
+          </Suspense>
         </div>
       </body>
     </html>
