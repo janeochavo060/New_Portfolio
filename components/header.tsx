@@ -68,7 +68,7 @@ const HeaderContent = () => {
   };
 
   return (
-    <div className="bg-[#E2E8D5] 2xl:px-[242px] xl:px-[70px] py-[10px] w-full uppercase sticky top-0 z-50 shadow-md">
+    <div className="bg-[#E2E8D5] 2xl:px-[242px] xl:px-[70px] py-[10px] w-full uppercase sticky top-0 z-50 shadow-md overflow-x-hidden">
       <div className="px-[30px] flex items-center justify-center">
         <div>
           <Image

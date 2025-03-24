@@ -23,7 +23,6 @@ export default function RootLayout({
       <body style={{ overflowX: "hidden" }}>
         <div>
           <Header />
-          {/* 🔥 Wrap children in Suspense to handle useSearchParams() */}
           <Suspense fallback={<div>Loading...</div>}>
             <main>{children}</main>
           </Suspense>

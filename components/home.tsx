@@ -63,7 +63,7 @@ const HomeContent = () => {
               <motion.div
                 initial={{ opacity: 0, y: -50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false }}
+                viewport={{ once: true }}
                 transition={{ duration: 1 }}
                 className="text-[24px] md:text-[30px] lg:text-[36px] text-shadow"
               >
@@ -74,7 +74,7 @@ const HomeContent = () => {
                 <motion.div
                   initial={{ opacity: 0, y: -50 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: false }}
+                  viewport={{ once: true }}
                   transition={{ duration: 2 }}
                   className="text-[24px] md:text-[30px] lg:text-[36px] text-shadow"
                 >
@@ -94,7 +94,7 @@ const HomeContent = () => {
               <motion.div
                 initial={{ opacity: 0, y: -50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false }}
+                viewport={{ once: true }}
                 transition={{ duration: 3 }}
                 className="max-w-[600px] text-[12px] md:text-[18px] lg:text-[20px] text-justify"
               >
@@ -105,7 +105,7 @@ const HomeContent = () => {
             <motion.div
               initial={{ opacity: 0, y: -50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               transition={{ duration: 1 }}
               className="flex flex-col items-center justify-center lg:justify-start md:flex-row mt-[30px]"
             >
@@ -157,7 +157,7 @@ const HomeContent = () => {
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               transition={{ duration: 2 }}
             >
               <Image

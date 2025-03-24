@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { GithubRound } from "@/public/icons/icons";
 import { motion } from "framer-motion";
-
+import Reveal from "@/components/Reveal";
 const My_portfolio = () => {
   interface Content {
     num?: string;
