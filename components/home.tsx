@@ -152,8 +152,7 @@ const HomeContent = () => {
               </div>
             </motion.div>
           </div>
-
-          <div className="relative flex items-center justify-center">
+          <div className="relative flex items-center justify-center  lg:pl-10 xl:pl-0  ">
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -164,7 +163,7 @@ const HomeContent = () => {
                 src="/images/jane.png"
                 width={485}
                 height={647}
-                alt="profile_logo"
+                alt="profile"
                 className="relative z-10 h-[400px] lg:h-auto object-cover border_image"
                 priority
               />
